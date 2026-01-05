@@ -32,6 +32,9 @@ jobs:
             -DCMAKE_MAKE_PROGRAM=ninja \
             -DCMAKE_C_COMPILER=clang \
             -DCMAKE_CXX_COMPILER=clang++ \
+            -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK/build/cmake/android.toolchain.cmake \
+            -DANDROID_ABI=armeabi-v7a \
+            -DANDROID_PLATFORM=android-29 \
             -G Ninja \
             -S ${{github.workspace}} \
             -B ${{github.workspace}}/build
